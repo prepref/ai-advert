@@ -1,0 +1,20 @@
+{
+    "train_data": {
+        "file_name": "train_data.json",
+        "columns": {
+                "prompt": "instruction",
+                "query": "input",
+                "response": "output",
+                "system": "system"
+                }
+    },
+    "val_data": {
+        "file_name": "val_data.json",
+        "columns": {
+                "prompt": "instruction",
+                "query": "input",
+                "response": "output",
+                "system": "system"
+                }
+    }
+}

@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+ai-advert/node_modules
+ai-advert/.pnp
+ai-advert/.pnp.js
+
+# testing
+ai-advert/coverage
+
+# production
+ai-advert/build
+
+# misc
+ai-advert/.DS_Store
+ai-advert/.env.local
+ai-advert/.env.development.local
+ai-advert/.env.test.local
+ai-advert/.env.production.local
+
+ai-advert/npm-debug.log*
+ai-advert/yarn-debug.log*
+ai-advert/yarn-error.log*
+
+# python
+__pycache__
+.gradio
+.venv
