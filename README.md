@@ -13,6 +13,11 @@ The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of adv
 - Marketing slogans
 - Sales copy
 
+File `prepare_data.py` converts training data from csv to correct JSON format:
+- `dataset_info.json`
+- `train_data.json`
+- `val_data.json`
+
 ### 🎯 Dataset Features
 
 - Structured data in JSON format
