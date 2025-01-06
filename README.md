@@ -125,3 +125,10 @@ React-based web application for generating marketing texts using AI. The applica
   - `description`: Detailed description of the subtype
 
 ## Folder: api-model
+
+Flask-based API service for text generation using quantized models.
+
+### 📡 API Endpoints
+
+- `/generate`: Generate marketing text with customizable parameters
+
