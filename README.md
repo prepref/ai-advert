@@ -6,7 +6,7 @@ A project for training language models to create effective advertising texts and
 
 ### 📝 Dataset
 
-The dataset(advertisment_instruction.csv) contains over 2,000 examples of advertising texts, slogans, and marketing materials used for language model fine-tuning. The model is trained to create:
+The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of advertising texts, slogans, and marketing materials used for language model fine-tuning. The model is trained to create:
 
 - Advertising copy for various products
 - Contextual advertising
