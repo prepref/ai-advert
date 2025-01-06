@@ -26,3 +26,6 @@ Fine-tuned marketing text generation model based on Qwen-2.5, trained using [`LL
 
  - `train.sh`: performs LoRA fine-tuning of Qwen-2.5 model with DeepSpeed optimization and BF16 precision for marketing text generation.
  - `merge.sh`: combines base model with LoRA weights into final deployable model.
+
+### 📦 GGUF Quantization
+Quantization of models using [`llama.cpp`](https://github.com/ggerganov/llama.cpp) framework. The file `convert_hf_to_gguf_update.py` was updated because the model `RuadaptQwen2.5-32B-instruct` has a different BPE pre-tokenizer. Therefore file `convert_hf_to_gguf.py` and folder `./models` were updated too. 
