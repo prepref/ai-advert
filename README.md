@@ -2,7 +2,7 @@
 
 A project for training language models to create effective advertising texts and marketing content.
   
-##Folder: finetuning
+## Folder: finetuning
 
 ### 📝 Description
 
@@ -21,7 +21,7 @@ The dataset(advertisment_instruction.csv) contains over 2,000 examples of advert
   - Output text
   - System prompt
 
-### Fine-tuning with LoRA  
+### 🛠 Fine-tuning with LoRA  
 
  - train.sh: performs LoRA fine-tuning of Qwen-2.5 model with DeepSpeed optimization and BF16 precision for marketing text generation.
  - merge.sh: combines base model with LoRA weights into final deployable model.
