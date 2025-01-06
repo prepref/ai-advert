@@ -26,6 +26,11 @@ Models advantages:
   - Optimized for mobile devices and weak hardware
   - Perfect for local deployment
 
+---
+Model descriptions are sourced from official model cards:
+- [Vikhr-Qwen-2.5-0.5B-Instruct](https://huggingface.co/Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct)
+- [RuadaptQwen2.5-32B-instruct](https://huggingface.co/msu-rcc-lair/RuadaptQwen2.5-32B-instruct)
+
 ## Folder: finetuning
 
 ### 📝 Dataset
