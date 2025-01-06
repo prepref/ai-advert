@@ -23,5 +23,5 @@ The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of adv
 
 ### 🛠 Fine-tuning with LoRA  
 
- - train.sh: performs LoRA fine-tuning of Qwen-2.5 model with DeepSpeed optimization and BF16 precision for marketing text generation.
- - merge.sh: combines base model with LoRA weights into final deployable model.
+ - `train.sh`: performs LoRA fine-tuning of Qwen-2.5 model with DeepSpeed optimization and BF16 precision for marketing text generation.
+ - `merge.sh`: combines base model with LoRA weights into final deployable model.
