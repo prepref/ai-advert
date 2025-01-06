@@ -1,6 +1,6 @@
 # Marketing Copywriter AI
 
-A project for training language models to create effective advertising texts and marketing content.
+A project to create effective advertising texts and marketing content.
   
 ## Folder: finetuning
 
