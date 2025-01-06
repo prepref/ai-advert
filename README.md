@@ -35,7 +35,8 @@ Quantization of models using [`llama.cpp`](https://github.com/ggerganov/llama.cp
 
 I decided quantize model to Q2_K and Q5_K_M because:
 - `Q2_K` provides the smallest model size (2-bit quantization) and using in google colab on free GPU
-- `Q5_K_M` offers the best balance between model size and quality  
+- `Q5_K_M` offers the best balance between model size and quality
+
 These formats are optimal for different deployment scenarios:
 - `Q2_K` for resource-constrained environments
 - `Q5_K_M` for production use where quality is important
