@@ -29,3 +29,13 @@ Fine-tuned marketing text generation model based on Qwen-2.5, trained using [`LL
 
 ### 📦 GGUF Quantization
 Quantization of models using [`llama.cpp`](https://github.com/ggerganov/llama.cpp) framework. The file `convert_hf_to_gguf_update.py` was updated because the model `RuadaptQwen2.5-32B-instruct` has a different BPE pre-tokenizer. Therefore file `convert_hf_to_gguf.py` and folder `./models` were updated too. 
+
+- `python convert_hf_to_gguf.py path/to/model`: Convert to quantum of `f16`
+- `./bin/llama-quantize path/to/model/ggml_model_f16.gguf path/to/model/model_Q5_K_M.gguf Q5_K_M`: Convert to quantum of Q5_K_M
+
+I decided quantize model to Q2_K and Q5_K_M because:
+- `Q2_K` provides the smallest model size (2-bit quantization) and using in google colab on free GPU
+- `Q5_K_M` offers the best balance between model size and quality  
+These formats are optimal for different deployment scenarios:
+- `Q2_K` for resource-constrained environments
+- `Q5_K_M` for production use where quality is important
