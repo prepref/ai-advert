@@ -22,7 +22,7 @@ The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of adv
   - System prompt
 
 ### 🛠 Fine-tuning with LoRA  
-Fine-tuned marketing text generation model based on Qwen-2.5, trained using `LLaMA-Factory` framework (https://github.com/hiyouga/LLaMA-Factory).  
+Fine-tuned marketing text generation model based on Qwen-2.5, trained using [`LLaMA-Factory`](https://github.com/hiyouga/LLaMA-Factory) framework.  
 
  - `train.sh`: performs LoRA fine-tuning of Qwen-2.5 model with DeepSpeed optimization and BF16 precision for marketing text generation.
  - `merge.sh`: combines base model with LoRA weights into final deployable model.
