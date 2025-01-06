@@ -132,3 +132,11 @@ Flask-based API service for text generation using quantized models.
 
 - `/generate`: Generate marketing text with customizable parameters
 
+### 🌐 Public Access
+
+- Ngrok tunnel creates public URL
+- No need for port forwarding
+- Secure HTTPS connection
+- Real-time URL generation
+- Access from any device/location
+
