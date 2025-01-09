@@ -5,7 +5,7 @@ import ResetButton from "./ResetButton";
 const AccordionSection = ({ title, children, setDefaultParameters, addButton }) => {
 
   return (
-    <Accordion>
+    <Accordion style={{margin: "0", marginBottom: "5px"}}>
       <AccordionSummary
       sx={{
         display: "flex",

@@ -23,6 +23,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  margin-bottom: 5px;
 }
 .system-text {
   width: 950px;
@@ -30,13 +32,23 @@
 
 /* Styles for generate button */
 .generate-button {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5px;
   height: 100px;
   background-color: transparent;
   border: none;
   font-size: 20px;
 }
+
+.generate-button:hover   {
+  color: #ac40d4;
+  border-color: transparent;
+}
+
 .generate-button.loading {
+  display: block;
+  margin: 0 auto;
   cursor: default;
   background-color: transparent;
 }
@@ -66,4 +78,11 @@
   to {
     opacity: 1;
   }
+}
+
+/* Styles for text type dropdown */
+.text-type-dropdown {
+  margin: 0 !important;
+  margin-top: 10px !important;
+  width: 300px;
 }

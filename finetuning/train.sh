@@ -1,4 +1,4 @@
-MODEL_PATH="Qwen/Qwen2.5-0.5B"
+MODEL_PATH="Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct"
 OUTPUT_DIR="./lora_model/"
 
 DS_CONFIG_PATH="./config_deepspeed.json"
@@ -34,7 +34,7 @@ torchrun $DISTRIBUTED_ARGS src/train.py \
     --overwrite_output_dir \
     --warmup_steps 50 \
     --weight_decay 5e-5 \
-    --per_device_train_batch_size 4 \
+    --per_device_train_batch_size 6 \
     --gradient_accumulation_steps 4 \
     --ddp_timeout 9000 \
     --learning_rate 5e-6 \
@@ -43,5 +43,5 @@ torchrun $DISTRIBUTED_ARGS src/train.py \
     --cutoff_len 4096 \
     --save_steps 100 \
     --plot_loss \
-    --num_train_epochs 3 \
+    --num_train_epochs 5 \
     --bf16

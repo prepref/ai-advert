@@ -1,14 +1,15 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import "../App.css";
 
-const DropdownInput = ({ label, value, onChange, options }) => {
+const DropdownInput = ({ label, value, onChange, options, className }) => {
   return (
-    <FormControl>
+    <FormControl className={className}>
       <InputLabel>{label}</InputLabel>
       <Select value={value} onChange={onChange} label={label}>
         {options.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
+          <MenuItem key={option.name} value={option.name}>
+            {option.name}
           </MenuItem>
         ))}
       </Select>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Typography, Tooltip } from "@mui/material";
+import React, { useState, useEffect, useCallback } from "react";
+import { Typography, Tooltip, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import axios from "axios";
 import TextInput from "./components/TextInput";
 import SliderInput from "./components/SliderInput";
@@ -8,6 +8,13 @@ import AccordionSection from "./components/AccordionSection";
 import ResetButton from "./components/ResetButton";
 import GenerateButton from "./components/GenerateButton";
 import "./App.css";
+
+// Format string with parameters
+function formatString(template, params) {
+  return template.replace(/{(.*?)}/g, (match, key) => {
+    return typeof params[key] !== 'undefined' ? params[key] : match;
+  });
+}
 
 const App = () => {
   const [userText, setUserText] = useState("");
@@ -24,13 +31,17 @@ const App = () => {
   const [outputText, setOutputText] = useState("");
   const [isGenerated, setIsGenerated] = useState(false);
   const maxUserTextLength = 1000;
+  const [textTypes, setTextTypes] = useState([])
+  const [textSubtypes, setTextSubtypes] = useState([])
 
+  // Reset system text
   const resetSystemText = () => {
     setSystemText(
       "Ты профессиональный маркетолог-копирайтер, который создает эффективные и убедительные рекламные тексты."
     );
   };
 
+  // Set default model parameters
   const setDefaultParameters = () => {
     setTmp(0.5);
     setMaxLength(50);
@@ -40,34 +51,87 @@ const App = () => {
     setTopK(40);
   };
 
+  // Generate text
   const handleSubmit = async () => {
     try {
       setIsGenerated(false);
       setOutputText("");
+      setUserText("");
 
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      const rules = await getRules(userChoice);
+      const formattedSystemText = systemText + "\n" + formatString(rules[0], {secondRule: rules[1], maxLength: maxLength})
 
-      /*
-      const response = await axios.post("/api/generate", {
-        systemText,
+      const response = await axios.post("http://localhost:5000/generate", {
         userText,
+        formattedSystemText,
         tmp,
         presencePenalty,
         frequencyPenalty,
         topP,
-        topK,
-        maxLength,
-        userChoice,
+        topK
       });
-      setOutputText(response.data.output);
-      */
-      
-      setOutputText("Меня зовут вася");
+
+      setOutputText(response.data.response);
       setIsGenerated(true);
+
     } catch (error) {
       console.error("Ошибка при отправке запроса:", error);
     }
   };
+
+  // Get text types discription
+  const getTextTypesDiscription = useCallback(async (type) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/subtypes/${type}`);
+      if (response.status === 200) {
+        const data = response.data;
+        return data.map(item => `${item.type}:\n${item.description}`).join("\n\n");
+      } else {
+        console.error("Ошибка при получении описания подтипов текстов");
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+    }
+  }, []);
+
+  // Get text of subtypes
+  const getTextTypes = useCallback(async (table) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/text-types/${table}`);
+      if (response.status === 200) {
+        const data = response.data;
+        if (table === "types_texts") {
+          setTextTypes(data.map(item =>
+            ({ name: item.name, description: getTextTypesDiscription(item.name) })
+          ));
+        } else if (table === "rules") {
+          setTextSubtypes(data)
+        }
+      } else {
+        console.error("Ошибка при получении типов текстов");
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+    }
+  }, [getTextTypesDiscription]);
+  // Get rules for selected type
+  const getRules = async (type) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/rules/${type}`);
+      if (response.status === 200) {
+        return response.data
+      } else {
+        console.error("Ошибка при получении правил");
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+    }
+  }
+
+  useEffect(() => {
+    getTextTypes("types_texts");
+    getTextTypes("rules");
+  }, [getTextTypes]);
 
   return (
     <div className="app">
@@ -77,7 +141,7 @@ const App = () => {
             label="Запрос"
             placeholder="Введите текст..."
             value={userText}
-          onChange={(e) => {
+            onChange={(e) => {
             if (e.target.value.length <= maxUserTextLength) {
               setUserText(e.target.value);
             }
@@ -152,16 +216,26 @@ const App = () => {
         />
       </AccordionSection>
 
-      <AccordionSection title="Вид текста">
+      <AccordionSection title="Тип текста">
+        {textTypes.map((item, index) => (
+          <Accordion key={index} style={{margin: "0", marginBottom: "10px"}}>
+            <AccordionSummary>
+              <Typography>{item.name}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{whiteSpace: "pre-wrap"}}>{item.description}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+
         <DropdownInput
-          label="Выберите нужный вид текста"
+          className="text-type-dropdown"
+          label="Выберите тип текста"
           value={userChoice}
           onChange={(e) => setUserChoice(e.target.value)}
-          options={[
-            { value: "rule1", label: "Правило 1" },
-            { value: "rule2", label: "Правило 2" },
-          ]}
+          options={textSubtypes}
         />
+
       </AccordionSection>
 
       <GenerateButton onClick={handleSubmit} />
@@ -169,7 +243,6 @@ const App = () => {
       {isGenerated && (
         <TextInput
           className="result-text"
-          label="Результат"
           placeholder="Ответ модели..."
           value={outputText}
           readOnly
