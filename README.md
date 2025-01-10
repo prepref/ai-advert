@@ -35,6 +35,8 @@ Model descriptions are sourced from official model cards:
 
 ### 📝 Dataset
 
+Source: https://huggingface.co/datasets/Johnie2Turbo/advertisment_instraction
+
 The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of advertising texts, slogans, and marketing materials used for language model fine-tuning. The model is trained to create:
 
 - Advertising copy for various products
