@@ -124,13 +124,16 @@ React-based web application for generating marketing texts using AI. The applica
   - `rule`: Secondary generation rule
   - `description`: Detailed description of the subtype
 
-## Folder: api-model
+## Folder: api
 
-Flask-based API service for text generation using quantized models.
+Flask-based API service.
 
 ### 📡 API Endpoints
 
-- `/generate`: Generate marketing text with customizable parameters
+- `/generate`: Generate marketing text with customizable parameters.
+- `/text-types/<table>`: Retrieve all text types from the specified table.
+- `/subtypes/<type_name>`: Retrieve subtypes for the specified type name.
+- `/rules/<type>`: Retrieve rules for the specified type.
 
 ### 🌐 Public Access
 
