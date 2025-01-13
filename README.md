@@ -119,11 +119,11 @@ React-based web application for generating marketing texts using AI. The applica
   - `num_subtypes`: Number of available subtypes
   - `main_rule`: Primary generation rule
 
-### rules
+### subtypes_texts
 - Contains specific rules for each text subtype
 - Fields:
   - `type`: Combined type and subtype (e.g., "advertisement:1")
-  - `rule`: Secondary generation rule
+  - `second_rule`: Secondary generation rule
   - `description`: Detailed description of the subtype
 
 ## Folder: api
