@@ -104,7 +104,7 @@ const App = () => {
           setTextTypes(data.map(item =>
             ({ name: item.name, description: getTextTypesDiscription(item.name) })
           ));
-        } else if (table === "rules") {
+        } else if (table === "subtypes_texts") {
           setTextSubtypes(data)
         }
       } else {
@@ -130,7 +130,7 @@ const App = () => {
 
   useEffect(() => {
     getTextTypes("types_texts");
-    getTextTypes("rules");
+    getTextTypes("subtypes_texts");
   }, [getTextTypes]);
 
   return (

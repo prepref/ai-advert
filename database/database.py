@@ -40,7 +40,7 @@ def get_subtypes_text(type):
     cursor = _conn.cursor()
     try:
         cursor.execute("""
-                    SELECT * FROM rules
+                    SELECT * FROM subtypes_texts
                     WHERE type ILIKE %s
                     """, (f"%{type}%",))
 
@@ -64,7 +64,7 @@ def get_all_name(table):
             if table == "types_texts":
                 name, _, _ = type
                 result.append(name)
-            elif table == "rules":
+            elif table == "subtypes_texts":
                 name, _, _ = type
                 result.append(name)
 
@@ -89,7 +89,7 @@ def get_rules(type):
         _ , _, main_rule = cursor.fetchall()[0]
 
         cursor.execute("""
-                    SELECT * FROM rules
+                    SELECT * FROM subtypes_texts
                     WHERE type ILIKE %s
                     """, (f"%{type}%",))
 
