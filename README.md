@@ -35,6 +35,8 @@ Model descriptions are sourced from official model cards:
 
 ### 📝 Dataset
 
+Source: https://huggingface.co/datasets/Johnie2Turbo/advertisment_instraction
+
 The dataset (`advertisment_instruction.csv`) contains over 2,000 examples of advertising texts, slogans, and marketing materials used for language model fine-tuning. The model is trained to create:
 
 - Advertising copy for various products
@@ -117,20 +119,23 @@ React-based web application for generating marketing texts using AI. The applica
   - `num_subtypes`: Number of available subtypes
   - `main_rule`: Primary generation rule
 
-### rules
+### subtypes_texts
 - Contains specific rules for each text subtype
 - Fields:
   - `type`: Combined type and subtype (e.g., "advertisement:1")
-  - `rule`: Secondary generation rule
+  - `second_rule`: Secondary generation rule
   - `description`: Detailed description of the subtype
 
-## Folder: api-model
+## Folder: api
 
-Flask-based API service for text generation using quantized models.
+Flask-based API service.
 
 ### 📡 API Endpoints
 
-- `/generate`: Generate marketing text with customizable parameters
+- `/generate`: Generate marketing text with customizable parameters.
+- `/text-types/<table>`: Retrieve all text types from the specified table.
+- `/subtypes/<type_name>`: Retrieve subtypes for the specified type name.
+- `/rules/<type>`: Retrieve rules for the specified type.
 
 ### 🌐 Public Access
 
