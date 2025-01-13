@@ -144,4 +144,3 @@ Flask-based API service.
 - Secure HTTPS connection
 - Real-time URL generation
 - Access from any device/location
-
