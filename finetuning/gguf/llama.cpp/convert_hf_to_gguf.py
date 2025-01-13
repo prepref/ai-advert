@@ -573,123 +573,12 @@ class Model:
         # NOTE: if you get an error here, you need to update the convert_hf_to_gguf_update.py script
         #       or pull the latest version of the model from Huggingface
         #       don't edit the hashes manually!
-        if chkhsh == "0ef9807a4087ebef797fc749390439009c3b9eda9ad1a097abbe738f486c01e5":
-            # ref: https://huggingface.co/meta-llama/Meta-Llama-3-8B
-            res = "llama-bpe"
-        if chkhsh == "049ecf7629871e3041641907f3de7c733e4dbfdc736f57d882ba0b0845599754":
-            # ref: https://huggingface.co/deepseek-ai/deepseek-llm-7b-base
-            res = "deepseek-llm"
-        if chkhsh == "347715f544604f9118bb75ed199f68779f423cabb20db6de6f31b908d04d7821":
-            # ref: https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-base
-            res = "deepseek-coder"
-        if chkhsh == "8aeee3860c56296a157a1fe2fad249ec40aa59b1bb5709f4ade11c4e6fe652ed":
-            # ref: https://huggingface.co/tiiuae/falcon-7b
-            res = "falcon"
-        if chkhsh == "9d032fcbd5501f4a38150912590928bfb36091efb5df11b8e2124b0390e3fb1e":
-            # ref: https://huggingface.co/tiiuae/Falcon3-7B-Base
-            res = "falcon3"
-        if chkhsh == "0876d13b50744004aa9aeae05e7b0647eac9d801b5ba4668afc01e709c15e19f":
-            # ref: https://huggingface.co/BAAI/bge-small-en-v1.5
-            res = "bert-bge"
-        if chkhsh == "8e62295832751ca1e8f92f2226f403dea30dc5165e448b5bfa05af5340c64ec7":
-            # ref: https://huggingface.co/BAAI/bge-large-zh-v1.5
-            res = "bert-bge-large"
-        if chkhsh == "b6dc8df998e1cfbdc4eac8243701a65afe638679230920b50d6f17d81c098166":
-            # ref: https://huggingface.co/mosaicml/mpt-7b
-            res = "mpt"
-        if chkhsh == "35d91631860c815f952d711435f48d356ebac988362536bed955d43bfa436e34":
-            # ref: https://huggingface.co/bigcode/starcoder2-3b
-            res = "starcoder"
-        if chkhsh == "3ce83efda5659b07b1ad37ca97ca5797ea4285d9b9ab0dc679e4a720c9da7454":
-            # ref: https://huggingface.co/openai-community/gpt2
-            res = "gpt-2"
-        if chkhsh == "32d85c31273f8019248f2559fed492d929ea28b17e51d81d3bb36fff23ca72b3":
-            # ref: https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b
-            res = "stablelm2"
-        if chkhsh == "6221ad2852e85ce96f791f476e0b390cf9b474c9e3d1362f53a24a06dc8220ff":
-            # ref: https://huggingface.co/smallcloudai/Refact-1_6-base
-            res = "refact"
-        if chkhsh == "9c2227e4dd922002fb81bde4fc02b0483ca4f12911410dee2255e4987644e3f8":
-            # ref: https://huggingface.co/CohereForAI/c4ai-command-r-v01
-            res = "command-r"
         if chkhsh == "e636dc30a262dcc0d8c323492e32ae2b70728f4df7dfe9737d9f920a282b8aea":
             # ref: https://huggingface.co/Qwen/Qwen1.5-7B
             res = "qwen2"
-        if chkhsh == "b6dc8df998e1cfbdc4eac8243701a65afe638679230920b50d6f17d81c098166":
-            # ref: https://huggingface.co/allenai/OLMo-1.7-7B-hf
-            res = "olmo"
-        if chkhsh == "a8594e3edff7c29c003940395316294b2c623e09894deebbc65f33f1515df79e":
-            # ref: https://huggingface.co/databricks/dbrx-base
-            res = "dbrx"
-        if chkhsh == "c7699093ba4255a91e702aa38a596aa81669f3525dae06c2953267dde580f448":
-            # ref: https://huggingface.co/jinaai/jina-reranker-v1-tiny-en
-            res = "jina-v1-en"
-        if chkhsh == "0876d13b50744004aa9aeae05e7b0647eac9d801b5ba4668afc01e709c15e19f":
-            # ref: https://huggingface.co/jinaai/jina-embeddings-v2-base-en
-            res = "jina-v2-en"
-        if chkhsh == "171aeeedd6fb548d418a7461d053f11b6f1f1fc9b387bd66640d28a4b9f5c643":
-            # ref: https://huggingface.co/jinaai/jina-embeddings-v2-base-es
-            res = "jina-v2-es"
-        if chkhsh == "27949a2493fc4a9f53f5b9b029c82689cfbe5d3a1929bb25e043089e28466de6":
-            # ref: https://huggingface.co/jinaai/jina-embeddings-v2-base-de
-            res = "jina-v2-de"
-        if chkhsh == "c136ed14d01c2745d4f60a9596ae66800e2b61fa45643e72436041855ad4089d":
-            # ref: https://huggingface.co/abacusai/Smaug-Llama-3-70B-Instruct
-            res = "smaug-bpe"
-        if chkhsh == "c7ea5862a53e4272c035c8238367063e2b270d51faa48c0f09e9d5b54746c360":
-            # ref: https://huggingface.co/LumiOpen/Poro-34B-chat
-            res = "poro-chat"
-        if chkhsh == "7967bfa498ade6b757b064f31e964dddbb80f8f9a4d68d4ba7998fcf281c531a":
-            # ref: https://huggingface.co/jinaai/jina-embeddings-v2-base-code
-            res = "jina-v2-code"
-        if chkhsh == "b6e8e1518dc4305be2fe39c313ed643381c4da5db34a98f6a04c093f8afbe99b":
-            # ref: https://huggingface.co/THUDM/glm-4-9b-chat
-            res = "chatglm-bpe"
-        if chkhsh == "7fc505bd3104ca1083b150b17d088b59534ede9bde81f0dd2090967d7fe52cee":
-            # ref: https://huggingface.co/LumiOpen/Viking-7B
-            res = "viking"
-        if chkhsh == "b53802fb28e26d645c3a310b34bfe07da813026ec7c7716883404d5e0f8b1901":
-            # ref: https://huggingface.co/core42/jais-13b
-            res = "jais"
-        if chkhsh == "7b3e7548e4308f52a76e8229e4e6cc831195d0d1df43aed21ac6c93da05fec5f":
-            # ref: https://huggingface.co/WisdomShell/CodeShell-7B
-            res = "codeshell"
-        if chkhsh == "63b97e4253352e6f357cc59ea5b583e3a680eaeaf2632188c2b952de2588485e":
-            # ref: https://huggingface.co/mistralai/Mistral-Nemo-Base-2407
-            res = "tekken"
-        if chkhsh == "855059429035d75a914d1eda9f10a876752e281a054a7a3d421ef0533e5b6249":
-            # ref: https://huggingface.co/HuggingFaceTB/SmolLM-135M
-            res = "smollm"
-        if chkhsh == "3c30d3ad1d6b64202cd222813e7736c2db6e1bd6d67197090fc1211fbc612ae7":
-            # ref: https://huggingface.co/bigscience/bloom
-            res = "bloom"
-        if chkhsh == "bc01ce58980e1db43859146dc51b1758b3b88729b217a74792e9f8d43e479d21":
-            # ref: https://huggingface.co/TurkuNLP/gpt3-finnish-small
-            res = "gpt3-finnish"
-        if chkhsh == "4e2b24cc4770243d65a2c9ec19770a72f08cffc161adbb73fcbb6b7dd45a0aae":
-            # ref: https://huggingface.co/LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct
-            res = "exaone"
-        if chkhsh == "fcace8b9cac38ce847670c970cd5892031a753a1ef381abd1d9af00f713da085":
-            # ref: https://huggingface.co/microsoft/phi-2
-            res = "phi-2"
-        if chkhsh == "60824e3c0d9401f89943cbb2fff727f0e2d4c545ba4df2d6e4f09a6db0f5b450":
-            # ref: https://huggingface.co/facebook/chameleon-7b
-            res = "chameleon"
-        if chkhsh == "1431a23e583c97432bc230bff598d103ddb5a1f89960c8f1d1051aaa944d0b35":
-            # ref: https://huggingface.co/sapienzanlp/Minerva-7B-base-v1.0
-            res = "minerva-7b"
-        if chkhsh == "8b5a93ed704057481f240da0be7e7dca721d7f8f4755263b6807227a2cbeae65":
-            # ref: https://huggingface.co/sentence-transformers/stsb-roberta-base
-            res = "roberta-bpe"
-        if chkhsh == "ad851be1dba641f2e3711822f816db2c265f788b37c63b4e1aeacb9ee92de8eb":
-            # ref: https://huggingface.co/ai-sage/GigaChat-20B-A3B-instruct
-            res = "gigachat"
-        if chkhsh == "d4c8f286ea6b520b3d495c4455483cfa2302c0cfcd4be05d781b6a8a0a7cdaf1":
-            # ref: https://huggingface.co/Infinigence/Megrez-3B-Instruct
-            res = "megrez"
-        if chkhsh == "877081d19cf6996e2c4ff0e1236341e9b7bde288f5311a56a937f0afbbb3aeb5":
-            # ref: https://huggingface.co/deepseek-ai/DeepSeek-V3
-            res = "deepseek-v3"
+        if chkhsh == "929becc2e029b94d063e45246117dca7773ebdd1b7649a5e7da3af916ce48078":
+            # ref: https://huggingface.co/prepref/RuadaptQwen2.5-32B-instruct-advert
+            res = "ruadapt-qwen"
 
         if res is None:
             logger.warning("\n")

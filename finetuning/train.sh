@@ -1,4 +1,6 @@
-MODEL_PATH="Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct"
+MODEL_PATH="msu-rcc-lair/RuadaptQwen2.5-32B-instruct"
+# MODEL_PATH="Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct"
+
 OUTPUT_DIR="./lora_model/"
 
 DS_CONFIG_PATH="./config_deepspeed.json"
@@ -33,15 +35,19 @@ torchrun $DISTRIBUTED_ARGS src/train.py \
     --overwrite_cache \
     --overwrite_output_dir \
     --warmup_steps 50 \
-    --weight_decay 5e-5 \
-    --per_device_train_batch_size 6 \
-    --gradient_accumulation_steps 4 \
+    --weight_decay 1e-1 \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 8 \
     --ddp_timeout 9000 \
-    --learning_rate 5e-6 \
+    --learning_rate 1e-3 \
     --lr_scheduler_type cosine \
     --logging_steps 1 \
     --cutoff_len 4096 \
     --save_steps 100 \
-    --plot_loss \
-    --num_train_epochs 5 \
-    --bf16
+    --plot_loss true \
+    --num_train_epochs 8 \
+    --bf16 true \
+    --evaluation_strategy steps \
+    --eval_steps 50 \
+    --load_best_model_at_end true \
+    --max_grad_norm 1.0
