@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import models
-# import ngrok
+import ngrok
 # from subprocess import Popen
 
 import sys
@@ -76,12 +76,12 @@ def get_rules(type):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ngrok_token = "2rJGbWj4Mv1NjdbzvQBZvEB4Ljs_3FQMfQ5kqhyGgR52p7q8u"
-# ngrok.set_auth_token(ngrok_token)
-# public_url = ngrok.connect(PORT)
+ngrok_token = "2rJGbWj4Mv1NjdbzvQBZvEB4Ljs_3FQMfQ5kqhyGgR52p7q8u"
+ngrok.set_auth_token(ngrok_token)
+public_url = ngrok.connect(PORT)
 
 if __name__ == '__main__':
-    # print(f"Public URL: {public_url.url()}")
+    print(f"Public URL: {public_url.url()}")
     # Popen(["cloudflared", "tunnel", "--url", "http://localhost:5000"])
     app.run(host='0.0.0.0', port=PORT)
     

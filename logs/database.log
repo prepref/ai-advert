@@ -1,0 +1,6 @@
+2025-01-13 15:39:46,130 - INFO - Подключение к базе данных успешно выполнено.
+2025-01-13 15:39:46,470 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-13 15:39:46,919 - DEBUG - https://huggingface.co:443 "GET /api/models/prepref/Ruadapt-Qwen-2.5-0.5b-Instruct-advert-GGUF HTTP/1.1" 200 3691
+2025-01-13 15:39:47,116 - DEBUG - https://huggingface.co:443 "GET /api/models/prepref/Ruadapt-Qwen-2.5-0.5b-Instruct-advert-GGUF/tree/main?recursive=True&expand=True HTTP/1.1" 200 1627
+2025-01-13 15:39:47,303 - DEBUG - https://huggingface.co:443 "HEAD /prepref/Ruadapt-Qwen-2.5-0.5b-Instruct-advert-GGUF/resolve/main/ruadapt-qwen-2.5-0.5b-instruct-advert-q5_k_m.gguf HTTP/1.1" 302 0
+2025-01-13 15:39:47,989 - DEBUG - Using proactor: IocpProactor
