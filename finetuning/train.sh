@@ -19,7 +19,7 @@ DISTRIBUTED_ARGS="
     --master_port $MASTER_PORT
   "
 
-torchrun $DISTRIBUTED_ARGS src/train.py \
+torchrun $DISTRIBUTED_ARGS llama-factory-src/train.py \
     --deepspeed $DS_CONFIG_PATH \
     --stage sft \
     --do_train \
