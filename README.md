@@ -2,6 +2,10 @@
 
 A project to create effective advertising texts and marketing content.
 
+## Presentation
+
+https://docs.google.com/presentation/d/1gokPx0jUHtcNelrvUXRRTUXz6KexFBFy7oXHD3INnR0/edit?usp=sharing
+
 ## Models
 
 Base models:
